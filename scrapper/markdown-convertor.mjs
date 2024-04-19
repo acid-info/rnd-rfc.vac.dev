@@ -1,5 +1,3 @@
-import path from 'path'
-
 function enhanceMarkdownWithBulletPointsCorrected(input) {
   // Split the input text into lines
   const lines = input.split('\n')
@@ -94,7 +92,7 @@ function updateMarkdownImagePath(content, number) {
   return content.replace(regex, `$1${number}/images`)
 }
 
-export function vacMarkdownToDocusaurusMarkdown(fileContent, filePath) {
+export function vacMarkdownToDocusaurusMarkdown(fileContent) {
   let convertedContent = fileContent;
 
   // Remove 'tags' line from frontmatter because the format is wrong
