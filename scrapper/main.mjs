@@ -1,6 +1,6 @@
 import { fetchDirectoryContents } from './fetch-content.mjs'
 
-const directoriesToSync = ['status', 'nomos', 'status', 'vac', 'waku']
+const directoriesToSync = ['codex', 'nomos', 'status', 'vac', 'waku']
 
 async function main() {
   for (let i = 0; i < directoriesToSync.length; i++) {
