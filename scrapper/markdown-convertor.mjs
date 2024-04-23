@@ -86,13 +86,6 @@ function unescapeHtmlComments(htmlString) {
   return htmlString.replace(/\\<\!--/g, '\n<!--').replace(/--\\>/g, '-->\n')
 }
 
-function updateMarkdownImagePath(content, number) {
-  const regex = /(!\[.*?\]\(\.\/)images/g
-
-  return content.replace(regex, `$1${number}/images`)
-}
-
-
 function updateMarkdownLinksToExcludeMD(content) {
   function replaceLinks(match, p1, p2, p3) {
     let url = p2.replace(/\.md$/, ''); // Remove .md extension from URL
@@ -131,7 +124,7 @@ export function vacMarkdownToDocusaurusMarkdown(fileContent) {
 
   convertedContent = enhanceMarkdownWithBulletPointsCorrected(convertedContent)
 
-  convertedContent = updateMarkdownImagePath(convertedContent, sidebarPosition)
+  convertedContent = updateMarkdownLinksToExcludeMD(convertedContent)
 
   // Insert sidebar_position at the end of frontmatter if it doesn't exist
   if (
