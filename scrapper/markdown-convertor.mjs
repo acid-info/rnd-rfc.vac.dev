@@ -92,6 +92,19 @@ function updateMarkdownImagePath(content, number) {
   return content.replace(regex, `$1${number}/images`)
 }
 
+
+function updateMarkdownLinksToExcludeMD(content) {
+  function replaceLinks(match, p1, p2, p3) {
+    let url = p2.replace(/\.md$/, ''); // Remove .md extension from URL
+    let anchor = p3.replace(/^\//, ''); // Remove preceding '/' from anchor if exists
+    return `[${p1}](${url}${anchor ? '#' + anchor : ''})`;
+  }
+
+  const regex = /\[((?:(?!\]).)+)\]\(([^)]*?\.md)(?:\/#|\/#)?([^)]*)\)/g
+
+  return content.replace(regex, replaceLinks)
+}
+
 export function vacMarkdownToDocusaurusMarkdown(fileContent) {
   let convertedContent = fileContent;
 
