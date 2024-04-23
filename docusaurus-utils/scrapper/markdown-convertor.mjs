@@ -119,23 +119,9 @@ export function vacMarkdownToDocusaurusMarkdown(fileContent) {
 
   convertedContent = unescapeHtmlComments(convertedContent)
 
-  // // parse sidebarPosition from the slug in the frontmatter
-  const sidebarPosition = parseSlugFromFrontmatter(convertedContent) || 1
-
   convertedContent = enhanceMarkdownWithBulletPointsCorrected(convertedContent)
 
   convertedContent = updateMarkdownLinksToExcludeMD(convertedContent)
-
-  // Insert sidebar_position at the end of frontmatter if it doesn't exist
-  if (
-    /^---\s*[\s\S]+?---/.test(convertedContent) &&
-    !/sidebar_position: \d+/.test(convertedContent)
-  ) {
-    convertedContent = convertedContent.replace(
-      /^---\s*([\s\S]+?)---/,
-      `---\n$1sidebar_position: ${sidebarPosition}\n---`,
-    )
-  }
 
   return convertedContent;
 }
