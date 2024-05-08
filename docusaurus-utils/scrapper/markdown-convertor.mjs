@@ -14,7 +14,7 @@ function enhanceMarkdownWithBulletPointsCorrected(input) {
       inFrontMatter = !inFrontMatter
       if (!inFrontMatter && contributorsLines.length) {
         // We're exiting frontmatter; time to add contributors
-        extractedFields.push(`contributors:\n${contributorsLines.join('\n')}`)
+        extractedFields.push(`contributors\n${contributorsLines.join('\n')}`)
         contributorsLines = [] // Reset for safety
       }
       return line // Keep the frontmatter delimiters
@@ -24,14 +24,11 @@ function enhanceMarkdownWithBulletPointsCorrected(input) {
       if (line.startsWith('contributors:')) {
         inContributors = true // Entering contributors section
       } else if (inContributors) {
-        if (line.startsWith('  -')) {
-          console.log(line)
+        if (line.trim().startsWith('-')) {
           contributorsLines.push(line.trim()) // Add contributors line
         } else {
           // Exiting contributors section
           inContributors = false
-          extractedFields.push(`contributors:\n${contributorsLines.join('\n')}`)
-          contributorsLines = [] // Reset
         }
       } else {
         const match = line.match(/(status|category|editor):(.*)/)
