@@ -25,6 +25,7 @@ function enhanceMarkdownWithBulletPointsCorrected(input) {
         inContributors = true // Entering contributors section
       } else if (inContributors) {
         if (line.startsWith('  -')) {
+          console.log(line)
           contributorsLines.push(line.trim()) // Add contributors line
         } else {
           // Exiting contributors section
@@ -82,8 +83,17 @@ function parseSlugFromFrontmatter(content) {
   return 1 // Return null if not found
 }
 
+function escapeHtmlTagSymbols(content) {
+  // Escape < and > with &lt; and &gt;, respectively
+  // Be cautious with this replacement; adjust as needed based on your context
+  content = content.replace(/(?<!`)<(?!.*?`)/g, '&lt;')
+  content = content.replace(/(?<!`)>(?!.*?`)/g, '&gt;')
+
+  return content;
+}
+
 function unescapeHtmlComments(htmlString) {
-  return htmlString.replace(/\\<\!--/g, '\n<!--').replace(/--\\>/g, '-->\n')
+  return htmlString.replace(/&lt;\!--/g, '\n<!--').replace(/--&gt;/g, '-->\n')
 }
 
 function updateMarkdownLinksToExcludeMD(content) {
@@ -107,9 +117,7 @@ export function vacMarkdownToDocusaurusMarkdown(fileContent) {
   // Replace <br> with <br/>
   convertedContent = convertedContent.replace(/<br>/g, '<br/>')
 
-  // Escape < and > with \< and \>, respectively
-  // Be cautious with this replacement; adjust as needed based on your context
-  convertedContent = convertedContent.replace(/</g, '\\<').replace(/>/g, '\\>')
+  convertedContent = escapeHtmlTagSymbols(convertedContent)
 
   // NEW: Remove 'slug' line from frontmatter
   convertedContent = convertedContent.replace(/^slug:.*\n?/m, '')
