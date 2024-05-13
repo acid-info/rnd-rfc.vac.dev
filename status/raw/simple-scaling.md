@@ -115,17 +115,17 @@ message CommunityDescription {
   // The Lamport timestamp of the message
   uint64 clock = 1;
   // A mapping of members in the community to their roles
-  map&lt;string,CommunityMember&gt; members = 2;
+  map<string,CommunityMember> members = 2;
   // The permissions of the Community
   CommunityPermissions permissions = 3;
   // The metadata of the Community
   ChatIdentity identity = 5;
   // A mapping of chats to their details
-  map&lt;string,CommunityChat&gt; chats = 6;
+  map<string,CommunityChat> chats = 6;
   // A list of banned members
   repeated string ban_list = 7;
   // A mapping of categories to their details
-  map&lt;string,CommunityCategory&gt; categories = 8;
+  map<string,CommunityCategory> categories = 8;
   // The admin settings of the Community
   CommunityAdminSettings admin_settings = 10;
   // If the community is encrypted
@@ -137,7 +137,7 @@ message CommunityDescription {
 }
 ```
 
-> *Note*: Currently, Status app has allocated shared cluster `16` in [52/WAKU2-RELAY-STATIC-SHARD-ALLOC](https://github.com/waku-org/specs/blob/waku-RFC/informational/relay-static-shard-alloc).
+&gt; *Note*: Currently, Status app has allocated shared cluster `16` in [52/WAKU2-RELAY-STATIC-SHARD-ALLOC](https://github.com/waku-org/specs/blob/waku-RFC/informational/relay-static-shard-alloc).
 Status app could allocate more shard clusters, for instance to establish a test net.
 We could add the shard cluster index to the community description as well.
 The recommendation for now is to keep it as a configuration option of the Status app.
@@ -333,7 +333,7 @@ REGISTER{my-app, {QmA, AddrA}}
 The app name, `my-app` contains the encoding of a single shard in string form:
 
 ```
-"rs/"| to_string(&lt;2-byte shard cluster index&gt;) | "/" | to_string(&lt;2-byte shard index&gt;)
+"rs/"| to_string(<2-byte shard cluster index>) | "/" | to_string(<2-byte shard index>)
 ```
 The string conversion SHOULD remove leading zeros.
 

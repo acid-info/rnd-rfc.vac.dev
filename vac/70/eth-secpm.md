@@ -100,7 +100,7 @@ XEd448_sign((ik, IK), message):
 ```
 ```
 XEd448_verify(u, message, (R || s)):
-    if (R.y &gt;= 2^448) or (s &gt;= 2^446): return FALSE
+    if (R.y >= 2^448) or (s >= 2^446): return FALSE
     h = (SHA512(R || 156326 || message)) % q
     R_check = s * convert_mont(5) - h * 156326
     if R == R_check: return TRUE
@@ -215,10 +215,10 @@ DHRatchet(state, header):
 ```
 ```
 SkipMessageKeys(state, until):
-    if state.NR + MAX_SKIP &lt; until:
+    if state.NR + MAX_SKIP < until:
         raise Error
     if state.CKr != none:
-        while state.Nr &lt; until:
+        while state.Nr < until:
             state.CKr, mk = HMAC-SHA256(state.CKr)
             state.MKSKIPPED[state.DHr, state.Nr] = mk
             state.Nr = state.Nr + 1
@@ -362,8 +362,8 @@ DeriveSecret(Secret, Label) = ExpandWithLabel(Secret, Label, "", KDF.Nh)
 ```
 struct {
     uint16 length;
-    opaque label&lt;V&gt;;
-    opaque context&lt;V&gt;;
+    opaque label<V>;
+    opaque context<V>;
 } KDFLabel;
 ```
 The fields of `KDFLabel` MUST be:
@@ -380,11 +380,11 @@ The sturcture of such object MUST be:
 struct {
 ProtocolVersion version = mls10;
 CipherSuite cipher_suite;
-opaque group_id&lt;V&gt;;
+opaque group_id<V>;
 uint64 epoch;
-opaque tree_hash&lt;V&gt;;
-opaque confirmed_trasncript_hash&lt;V&gt;;
-Extension extension&lt;V&gt;;
+opaque tree_hash<V>;
+opaque confirmed_trasncript_hash<V>;
+Extension extension<V>;
 } GroupContext;
 ```
 
@@ -435,9 +435,9 @@ ProtocolVersion version;
 CipherSuite cipher_suite;
 HPKEPublicKey init_key;
 LeafNode leaf_node;
-Extension extensions&lt;V&gt;;
+Extension extensions<V>;
 /* SignWithLabel(., "KeyPackageTBS", KeyPackageTBS) */
-opaque signature&lt;V&gt;;
+opaque signature<V>;
 }
 ```
 ```
@@ -446,7 +446,7 @@ ProtocolVersion version;
 CipheSuite cipher_suite;
 HPKEPublicKey init_key;
 LeafNode leaf_node;
-Extension extensions&lt;V&gt;;
+Extension extensions<V>;
 }
 ```
 `KeyPackage` object MUST be verified when:
@@ -495,9 +495,9 @@ All members of a group MUST support the cipher suite and protocol version in use
 
 ```
 struct {
-ExtensionType extension_types&lt;V&gt;;
-ProposalType proposal_types&lt;V&gt;;
-CredentialType credential_types&lt;V&gt;;
+ExtensionType extension_types<V>;
+ProposalType proposal_types<V>;
+CredentialType credential_types<V>;
 }
 ```
 

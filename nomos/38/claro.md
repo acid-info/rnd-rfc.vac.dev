@@ -156,35 +156,35 @@ The node initializes the following integer ratios as constants:
 
 # 
 confidence_threshold
-  &lt;-- 1   
+  <-- 1   
          
 # constant look ahead for number of rounds we expect to finalize a
 # decision.  Could be set dependent on number of nodes 
 # visible in the current gossip graph.
 look_ahead 
-  &lt;-- 19
+  <-- 19
 
 # the confidence weighting parameter (aka alpha_1)
 certainty 
-  &lt;-- 4 / 5  
+  <-- 4 / 5  
 doubt ;; the lack of confidence weighting parameter (aka alpha_2)
-  &lt;-- 2 / 5 
+  <-- 2 / 5 
 
 k_multiplier     ;; neighbor threshold multiplier
-  &lt;-- 2
+  <-- 2
 
 ;;; maximal threshold multiplier, i.e. we will never exceed 
 ;;; questioning k_initial * k_multiplier ^ max_k_multiplier_power peers
 max_k_multiplier_power 
-  &lt;-- 4
+  <-- 4
     
 ;;; Initial number of nodes queried in a round
 k_initial 
-  &lt;-- 7
+  <-- 7
 
 ;;; maximum query rounds before termination
 max_rounds ;; placeholder for simulation work, no justification yet
-   &lt;-- 100 
+   <-- 100 
 ```
       
 The following variables are needed to keep the state of Claro:
@@ -192,17 +192,17 @@ The following variables are needed to keep the state of Claro:
 ```
 ;; current number of nodes to attempt to query in a round
 k 
-  &lt;-- k_original
+  <-- k_original
   
 ;; total number of votes examined over all rounds
 total_votes 
-   &lt;-- 0 
+   <-- 0 
 ;; total number of YES (i.e. positive) votes for the truth of the proposal
 total_positive 
-   &lt;-- 0
+   <-- 0
 ;; the current query round, an integer starting from zero
 round
-  &lt;-- 0
+  <-- 0
 ```
 
 
@@ -476,11 +476,11 @@ the validity of the following statements expressed in Notation3 (aka
 
 
 ```n3
-@prefix rdf:         &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-@prefix rdfs:        &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix xsd:         &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix Claro      &lt;https://rdf.logos.co/protocol/Claro#&gt; .
+@prefix Claro      <https://rdf.logos.co/protocol/Claro#> .
 
 Claro:query
   :holds (

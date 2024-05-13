@@ -94,7 +94,7 @@ internal_nullifier = poseidonHash([a_1])
 
 **id_commitment** in [32/RLN-V1](../32/rln-v1) is equal to `poseidonHash(identity_secret)`. 
 The goal of RLN-Diff is to set different rate-limits for different users. 
-It follows that **id_commitment** must somehow depend on the `user_message_limit` parameter, where 0 <= `user_message_limit` <= `message_limit`. 
+It follows that **id_commitment** must somehow depend on the `user_message_limit` parameter, where 0 &lt;= `user_message_limit` &lt;= `message_limit`. 
 There are few ways to do that:
 1. Sending `identity_secret_hash` = `poseidonHash(identity_secret, userMessageLimit)` and zk proof that `user_message_limit` is valid (is in the right range). 
 This approach requires zkSNARK verification, which is an expensive operation on the blockchain.

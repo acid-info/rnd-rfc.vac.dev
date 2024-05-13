@@ -189,7 +189,7 @@ message WakuMessageArchiveIndexMetadata {
 }
 
 message WakuMessageArchiveIndex {
-  map&lt;string, WakuMessageArchiveIndexMetadata&gt; archives = 1
+  map<string, WakuMessageArchiveIndexMetadata> archives = 1
 }
 ```
 

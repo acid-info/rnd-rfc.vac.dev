@@ -24,7 +24,7 @@ EIP-1459 specifies [the URL scheme](https://eips.ethereum.org/EIPS/eip-1459#spec
 This specification uses the same approach, but with a `matree` scheme:
 
 ```
-matree://&lt;key&gt;@&lt;fqdn&gt;
+matree://<key>@<fqdn>
 ```
 
 where
@@ -55,7 +55,7 @@ and adapted for use with `multiaddrs`:
 The tree root entry MUST use the following format:
 
 ```
-matree-root:v1 m=&lt;ma-root&gt; l=&lt;link-root&gt; seq=&lt;sequence number&gt; sig=&lt;signature&gt;
+matree-root:v1 m=<ma-root> l=<link-root> seq=<sequence number> sig=<signature>
 ```
 
 where
@@ -73,7 +73,7 @@ encoded as URL-safe base64
 Branch entries MUST take the format:
 
 ```
-matree-branch:&lt;h₁&gt;,&lt;h₂&gt;,...,&lt;hₙ&gt;
+matree-branch:<h₁>,<h₂>,...,<hₙ>
 ```
 
 where
@@ -89,7 +89,7 @@ For the subtree pointed to by `link-root`,
 leaf entries MUST take the format:
 
 ```
-matree://&lt;key&gt;@&lt;fqdn&gt;
+matree://<key>@<fqdn>
 ```
 
 which links to a different list located in another domain.
@@ -100,7 +100,7 @@ For the subtree pointed to by `ma-root`,
 leaf entries MUST take the format:
 
 ```
-ma:&lt;multiaddr&gt;
+ma:<multiaddr>
 ```
 
 which contains the `multiaddr` of a `libp2p` peer.

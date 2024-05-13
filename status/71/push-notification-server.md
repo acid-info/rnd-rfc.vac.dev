@@ -157,8 +157,8 @@ A client SHOULD listen for a response sent on the [partitioned topic](../../waku
 If success is true the client has registered successfully.
 
 If `success` is `false`:
-	> If `MALFORMED_MESSAGE` is returned, the request SHOULD NOT be retried without ensuring that it is correctly formed.
-	> If `INTERNAL_ERROR` is returned, the request MAY be retried, but the client MUST backoff exponentially.
+	&gt; If `MALFORMED_MESSAGE` is returned, the request SHOULD NOT be retried without ensuring that it is correctly formed.
+	&gt; If `INTERNAL_ERROR` is returned, the request MAY be retried, but the client MUST backoff exponentially.
 
 #### Handle Errors:
 - If the message can’t be decrypted, the message MUST be discarded.
@@ -187,7 +187,7 @@ A node that handles receiving and sending push notifications for clients.
 
 ### Query Topic:
 On successful registration the server MUST be listening to the topic derived from:
-  > `0x` + HexEncode(Shake256(CompressedClientPublicKey))
+  &gt; `0x` + HexEncode(Shake256(CompressedClientPublicKey))
 
 Using the topic derivation algorithm described here and listen for client queries.
 
@@ -473,7 +473,7 @@ DATA DISCLOSED
 
 #### PushNotificationQueryInfo:
 `access_token`: the access token used to send a push notification&lt;br /&gt;
-`installation_id`: the `installation_id` of the device associated with the `access_token`<br /&gt;
+`installation_id`: the `installation_id` of the device associated with the `access_token`&lt;br /&gt;
 `public_key`: the `SHAKE-256` of the public key associated with this `access_token` and `installation_id`.&lt;br /&gt;
 `allowed_key_list`: a list of encrypted access tokens to be returned to the client in case there’s any filtering on public keys in place.&lt;br /&gt;
 `grant`: the grant used to register with this server.&lt;br /&gt;
@@ -491,7 +491,7 @@ DATA DISCLOSED
 `public_key`: the `SHAKE-256` of the compressed public key of the receiving client.&lt;br /&gt;
 `installation_id`: the `installation_id` of the receiving client.&lt;br /&gt;
 `message`: the encrypted message that is being notified on.&lt;br /&gt;
-`type`: the type of the push notification, either `MESSAGE` or `MENTION`<br /&gt;
+`type`: the type of the push notification, either `MESSAGE` or `MENTION`&lt;br /&gt;
 `author`: the `SHAKE-256` of the public key of the sender
 
 Data disclosed

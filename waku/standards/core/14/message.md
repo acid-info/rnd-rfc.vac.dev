@@ -173,7 +173,7 @@ Waku message hash computation (`meta` attribute not present):
 pubsub_topic = "/waku/2/default-waku/proto" (0x2f77616b752f322f64656661756c742d77616b752f70726f746f)
 message.payload = 0x010203045445535405060708
 message.content_topic = "/waku/2/default-content/proto" (0x2f77616b752f322f64656661756c742d636f6e74656e742f70726f746f)
-message.meta = &lt;not-present&gt;
+message.meta = <not-present>
 message.timestamp = 0x175789bfa23f8400
 
 message_hash = 0xa2554498b31f5bcdfcbf7fa58ad1c2d45f0254f3f8110a85588ec3cf10720fd8

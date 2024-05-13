@@ -56,12 +56,12 @@ partitionTopic := "contact-discovery-" + strconv.FormatInt(partition.Int64(), 10
 var hash []byte = keccak256(partitionTopic)
 var topicLen int = 4
 
-if len(hash) &lt; topicLen {
+if len(hash) < topicLen {
     topicLen = len(hash)
 }
 
 var contactCodeTopic [4]byte
-for i = 0; i &lt; topicLen; i++ {
+for i = 0; i < topicLen; i++ {
     contactCodeTopic[i] = hash[i]
 }
 ```
@@ -88,12 +88,12 @@ hexEncodedKey := hex.EncodeToString(sharedKey)
 var hash []byte = keccak256(hexEncodedKey)
 var topicLen int = 4
 
-if len(hash) &lt; topicLen {
+if len(hash) < topicLen {
     topicLen = len(hash)
 }
 
 var topic [4]byte
-for i = 0; i &lt; topicLen; i++ {
+for i = 0; i < topicLen; i++ {
     topic[i] = hash[i]
 }
 ```

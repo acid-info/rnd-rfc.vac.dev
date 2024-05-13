@@ -127,7 +127,7 @@ The following usage requirements apply:
 
 - The `topicid` field MUST contain the pubsub topic.
 
-> Note: The `topicid` refering to pubsub topic and
+&gt; Note: The `topicid` refering to pubsub topic and
 `topicId` refering to content-topic are detailed in [23/WAKU2-TOPICS](../../../informational/23/topics).
 
 ### Signature Policy
@@ -136,6 +136,7 @@ The [`StrictNoSign` option](https://github.com/libp2p/specs/blob/master/pubsub/R
 Note that this does not merely imply that these fields be empty, but that they MUST be _absent_ from the marshalled message.
 
 ## Security Analysis
+
 
 <!-- TODO: realized that the prime security objective of the `WakuRelay` protocol is to provide peers unlinkability as such this feature is prioritized over other features e.g., unlinkability is preferred over authenticity and integrity. It might be good to motivate unlinkability and its impact on the relay protocol or other protocols invoking relay protocol.-->
 

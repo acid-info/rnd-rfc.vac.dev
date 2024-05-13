@@ -274,12 +274,12 @@ interface JsonConfig {
     nodeKey?: string;
     keepAliveInterval?: number;
     relay?: boolean;
-    relayTopics?: Array&lt;string&gt;;
+    relayTopics?: Array<string>;
     gossipsubParameters?: GossipSubParameters;
     minPeersToPublish?: number
     legacyFilter?: boolean;
     discV5?: boolean;
-    discV5BootstrapNodes?: Array&lt;string&gt;;
+    discV5BootstrapNodes?: Array<string>;
     discV5UDPPort?: number;
     store?: boolean;
     databaseURL?: string;

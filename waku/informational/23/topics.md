@@ -44,7 +44,7 @@ The first two parts indicate
 
 If applicable, it is RECOMMENDED to structure `{topic-name}` in a hierarchical way as well.
 
-> *Note*: In previous versions of this document, the structure was `/waku/2/{topic-name}/{encoding}`.
+&gt; *Note*: In previous versions of this document, the structure was `/waku/2/{topic-name}/{encoding}`.
 The now deprecated `/{encoding}` was always set to `/proto`,
 which indicated that the [data field](../../standards/core/11/RELAY#protobuf-definition) in pubsub is serialized/encoded as protobuf.
 The inspiration for this format was taken from
@@ -142,7 +142,7 @@ For mapping Waku v1 topics to Waku v2 content topics,
 the following structure for the content topic SHOULD be used:
 
 ```
-/waku/1/&lt;4bytes-waku-v1-topic&gt;/rfc26
+/waku/1/<4bytes-waku-v1-topic>/rfc26
 ```
 
 The `<4bytes-waku-v1-topic>` SHOULD be the lowercase hex representation of the 4-byte Waku v1 topic.

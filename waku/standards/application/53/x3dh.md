@@ -135,7 +135,7 @@ message Bundle {
   // Identity key 'IK_B'
   bytes identity = 1;
   // Signed prekey 'SPK_B' for each device, indexed by 'installation-id'
-  map&lt;string,SignedPreKey&gt; signed_pre_keys = 2;
+  map<string,SignedPreKey> signed_pre_keys = 2;
   // Prekey signature 'Sig(IK_B, Encode(SPK_B))'
   bytes signature = 4;
   // When the bundle was created locally
@@ -171,7 +171,7 @@ message ProtocolMessage {
   // A sequence of bundles
   repeated Bundle bundles = 3;
   // One to one message, encrypted, indexed by installation_id
-  map&lt;string,DirectMessageProtocol&gt; direct_message = 101;
+  map<string,DirectMessageProtocol> direct_message = 101;
   // Public message, not encrypted
   bytes public_message = 102;
 }

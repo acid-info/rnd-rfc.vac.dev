@@ -289,9 +289,7 @@ message DiscordMessageAttachment {
 A node requires message types to decide how to encrypt a particular message and what metadata needs to be attached when passing a message to the transport layer.
 For more on this, see [10/WAKU2](../../waku/standards/core/10/waku2).
 
-
 <!-- TODO: This reference is a bit odd, considering the layer payloads should interact with is Secure Transport, and not Whisper/Waku. This requires more detail -->
-
 
 
 The following messages types MUST be supported:
@@ -321,7 +319,7 @@ This is where the basic algorithm of Lamport timestamp would fall short as it's 
 
 The status client therefore makes a "bid", speculating that it will beat the current chat-timestamp, s.t. the status client's Lamport timestamp format is: `clock = `max({timestamp}, chat_clock + 1)`
 
-This will satisfy the Lamport requirement, namely: a -&gt; b then T(a) &lt; T(b)
+This will satisfy the Lamport requirement, namely: a -> b then T(a) < T(b)
 
 `timestamp` MUST be Unix time calculated, when the node creates the message, in milliseconds. 
 This field SHOULD not be relied upon for message ordering.
@@ -1046,7 +1044,7 @@ message CommunityEditSharedAddresses {
 | ----- | ---- | ---- | ---- |
 | 1 | clock | `uint64` | Clock value of the message | 
 | 2 | community_id | `bytes` | The id of the community |
-| 3 | revealed_accounts | `array<RevealedAccount>` | A list of revealed accounts |
+| 3 | revealed_accounts | `array&lt;RevealedAccount&gt;` | A list of revealed accounts |
 
 ## Upgradability
 

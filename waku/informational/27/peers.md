@@ -79,7 +79,7 @@ it SHOULD do so by sending periodic [libp2p pings](https://docs.libp2p.io/concep
 The recommended period between pings SHOULD be _at most_ 50% of the shortest idle connection timeout for the specific client and transport.
 For example, idle TCP connections often times out after 10 to 15 minutes.
 
-> **Implementation note:** the `nim-waku` client currently implements a keep-alive mechanism every `5 minutes`,
+&gt; **Implementation note:** the `nim-waku` client currently implements a keep-alive mechanism every `5 minutes`,
 in response to a TCP connection timeout of `10 minutes`.
 
 ## Copyright

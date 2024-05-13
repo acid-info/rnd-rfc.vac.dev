@@ -25,6 +25,7 @@ Peers that violate the messaging rate are considered spammers and their message 
 Spammers are also financially punished and removed from the system. 
 
 
+
 <!-- **Protocol identifier***: `/vac/waku/waku-rln-relay/2.0.0-alpha1` -->
 
 

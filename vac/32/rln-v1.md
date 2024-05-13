@@ -583,7 +583,7 @@ let mut rln = RLN::new(tree_height, resources);
 
 ```rust
 // We generate an identity tuple
-let mut buffer = Cursor::new(Vec::&lt;u8&gt;::new());
+let mut buffer = Cursor::new(Vec::<u8>::new());
 rln.extended_key_gen(&mut buffer).unwrap();
 // We deserialize the keygen output to obtain
 // the identiy_secret and id_commitment
@@ -617,7 +617,7 @@ let signal = b"RLN is awesome";
 let proof_input = prepare_prove_input(identity_secret, id_index, epoch, signal);
 // We generate a RLN proof for proof_input
 let mut in_buffer = Cursor::new(proof_input);
-let mut out_buffer = Cursor::new(Vec::&lt;u8&gt;::new());
+let mut out_buffer = Cursor::new(Vec::<u8>::new());
 rln.generate_rln_proof(&mut in_buffer, &mut out_buffer)
     .unwrap();
 // We get the public outputs returned by the circuit evaluation
