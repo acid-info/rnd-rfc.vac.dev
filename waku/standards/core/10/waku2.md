@@ -2,22 +2,23 @@
 title: 10/WAKU2
 name: Waku v2
 status: draft
-editor: Hanno Cornelius \<hanno@status.im\> 
+editor: Hanno Cornelius &lt;hanno@status.im&gt; 
 contributors:
-  - Sanaz Taheri \<sanaz@status.im\>
-  - Hanno Cornelius \<hanno@status.im\>
-  - Reeshav Khan \<reeshav@status.im\>
-  - Daniel Kaiser \<danielkaiser@status.im\>
-  - Oskar Thorén \<oskarth@titanproxy.com\>
+  - Sanaz Taheri &lt;sanaz@status.im&gt;
+  - Hanno Cornelius &lt;hanno@status.im&gt;
+  - Reeshav Khan &lt;reeshav@status.im&gt;
+  - Daniel Kaiser &lt;danielkaiser@status.im&gt;
+  - Oskar Thorén &lt;oskarth@titanproxy.com&gt;
 ---
 - Status: draft
-- Editor: Hanno Cornelius \<hanno@status.im\>
-- Contributors::
-  - Sanaz Taheri \<sanaz@status.im\>
-  - Hanno Cornelius \<hanno@status.im\>
-  - Reeshav Khan \<reeshav@status.im\>
-  - Daniel Kaiser \<danielkaiser@status.im\>
-  - Oskar Thorén \<oskarth@titanproxy.com\>
+- Editor: Hanno Cornelius &lt;hanno@status.im&gt;
+- Contributors:
+  - Sanaz Taheri &lt;sanaz@status.im&gt;
+  - Hanno Cornelius &lt;hanno@status.im&gt;
+  - Reeshav Khan &lt;reeshav@status.im&gt;
+  - Daniel Kaiser &lt;danielkaiser@status.im&gt;
+  - Oskar Thorén &lt;oskarth@titanproxy.com&gt;
+  
 
 ## Abstract
 

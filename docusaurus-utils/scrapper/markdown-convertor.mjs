@@ -14,7 +14,7 @@ function enhanceMarkdownWithBulletPointsCorrected(input) {
       inFrontMatter = !inFrontMatter
       if (!inFrontMatter && contributorsLines.length) {
         // We're exiting frontmatter; time to add contributors
-        extractedFields.push(`contributors\n${contributorsLines.join('\n')}`)
+        extractedFields.push(`contributors\n${contributorsLines.join('\n')}\n`)
         contributorsLines = [] // Reset for safety
       }
       return line // Keep the frontmatter delimiters

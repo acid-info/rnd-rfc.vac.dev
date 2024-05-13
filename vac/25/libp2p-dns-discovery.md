@@ -2,11 +2,11 @@
 title: 25/LIBP2P-DNS-DISCOVERY
 name: Libp2p Peer Discovery via DNS
 status: deleted
-editor: Hanno Cornelius \<hanno@status.im\>
+editor: Hanno Cornelius &lt;hanno@status.im&gt;
 contributors:
 ---
 - Status: deleted
-- Editor: Hanno Cornelius \<hanno@status.im\>
+- Editor: Hanno Cornelius &lt;hanno@status.im&gt;
 
 `25/LIBP2P-DNS-DISCOVERY` specifies a scheme to implement [`libp2p`](https://libp2p.io/) peer discovery via DNS for Waku v2.
 The generalised purpose is to retrieve an arbitrarily long, authenticated, updateable list of [`libp2p` peers](https://docs.libp2p.io/concepts/peer-id/) to bootstrap connection to a `libp2p` network.
@@ -24,13 +24,13 @@ EIP-1459 specifies [the URL scheme](https://eips.ethereum.org/EIPS/eip-1459#spec
 This specification uses the same approach, but with a `matree` scheme:
 
 ```
-matree://\<key\>@\<fqdn\>
+matree://&lt;key&gt;@&lt;fqdn&gt;
 ```
 
 where
 - `matree` is the selected `multiaddr` Merkle tree scheme
-- `\<fqdn\>` is the fully qualified domain name on which the list can be found
-- `\<key\>` is the base32 encoding of the compressed 32-byte binary public key that signed the list.
+- `<fqdn>` is the fully qualified domain name on which the list can be found
+- `<key>` is the base32 encoding of the compressed 32-byte binary public key that signed the list.
 
 The example URL from EIP-1459, adapted to the above scheme becomes:
 
@@ -55,7 +55,7 @@ and adapted for use with `multiaddrs`:
 The tree root entry MUST use the following format:
 
 ```
-matree-root:v1 m=\<ma-root\> l=\<link-root\> seq=\<sequence number\> sig=\<signature\>
+matree-root:v1 m=&lt;ma-root&gt; l=&lt;link-root&gt; seq=&lt;sequence number&gt; sig=&lt;signature&gt;
 ```
 
 where
@@ -73,11 +73,11 @@ encoded as URL-safe base64
 Branch entries MUST take the format:
 
 ```
-matree-branch:\<h₁\>,\<h₂\>,...,\<hₙ\>
+matree-branch:&lt;h₁&gt;,&lt;h₂&gt;,...,&lt;hₙ&gt;
 ```
 
 where
-- `\<h₁\>,\<h₂\>,...,\<hₙ\>` are the hashes of other subtree entries
+- `<h₁>,<h₂>,...,<hₙ>` are the hashes of other subtree entries
 
 ## Leaf entries
 
@@ -89,7 +89,7 @@ For the subtree pointed to by `link-root`,
 leaf entries MUST take the format:
 
 ```
-matree://\<key\>@\<fqdn\>
+matree://&lt;key&gt;@&lt;fqdn&gt;
 ```
 
 which links to a different list located in another domain.
@@ -100,7 +100,7 @@ For the subtree pointed to by `ma-root`,
 leaf entries MUST take the format:
 
 ```
-ma:\<multiaddr\>
+ma:&lt;multiaddr&gt;
 ```
 
 which contains the `multiaddr` of a `libp2p` peer.
